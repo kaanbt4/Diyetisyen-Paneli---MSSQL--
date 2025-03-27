@@ -23,41 +23,58 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
         }
-       
+
         private void button1_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
+            // Boş alan kontrolü
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(label4.Text) ||
+                string.IsNullOrWhiteSpace(label6.Text) ||
+                string.IsNullOrWhiteSpace(label9.Text))
+            {
+                MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Eğer boş alan varsa işlemi durdur
+            }
 
-            double vki = Convert.ToDouble(label4.Text);  // label4.Text'teki değeri double'a çevir
-            double yagorani = Convert.ToDouble(label9.Text);
-            
-            
+            try
+            {
+                baglanti.Open();
 
-            SqlCommand komut = new SqlCommand("insert into Table_5 (Ad_Soyad, Boy, Kilo, VKI_Degeri, Cinsiyet, Tc_Kimlik, yagorani) values (@p1, @p2, @p3, @p4, @p5, @p6, @p7)", baglanti);
-            komut.Parameters.AddWithValue("@p1", textBox1.Text);
-            komut.Parameters.AddWithValue("@p2", textBox2.Text);
-            komut.Parameters.AddWithValue("@p3", textBox3.Text);
-            komut.Parameters.AddWithValue("@p4", vki);
-            komut.Parameters.AddWithValue("@p5", label6.Text);
-            komut.Parameters.AddWithValue("@p6", textBox4.Text);
-            komut.Parameters.AddWithValue("@p7", yagorani);
+                double vki = Convert.ToDouble(label4.Text);
+                double yagorani = Convert.ToDouble(label9.Text);
 
+                SqlCommand komut = new SqlCommand("INSERT INTO Table_5 (Ad_Soyad, Boy, Kilo, VKI_Degeri, Cinsiyet, Tc_Kimlik, yagorani) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)", baglanti);
+                komut.Parameters.AddWithValue("@p1", textBox1.Text);
+                komut.Parameters.AddWithValue("@p2", textBox2.Text);
+                komut.Parameters.AddWithValue("@p3", textBox3.Text);
+                komut.Parameters.AddWithValue("@p4", vki);
+                komut.Parameters.AddWithValue("@p5", label6.Text);
+                komut.Parameters.AddWithValue("@p6", textBox4.Text);
+                komut.Parameters.AddWithValue("@p7", yagorani);
 
+                komut.ExecuteNonQuery();
 
-            komut.ExecuteNonQuery();
-            this.table_5TableAdapter.Fill(this.rumeysaOzenDataSet.Table_5);
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_5 ORDER BY Eklenme_Tarihi ASC", baglanti);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_5 ORDER BY Eklenme_Tarihi ASC", baglanti);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
 
-            baglanti.Close();
-
-            MessageBox.Show("Girdiğiniz Bilgiler Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            
+                MessageBox.Show("Girdiğiniz Bilgiler Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                baglanti.Close();
+            }
         }
-        
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'rumeysaOzenDataSet6.Table_5' table. You can move, or remove it, as needed.
@@ -119,17 +136,35 @@ namespace WindowsFormsApp4
 
         private void button4_Click(object sender, EventArgs e)
         {
-            double vki;
-            double boy;
-            double kilo;
+            // Boş alan kontrolü
+            if (string.IsNullOrWhiteSpace(textBox2.Text) || string.IsNullOrWhiteSpace(textBox3.Text))
+            {
+                MessageBox.Show("Lütfen boy ve kilo bilgilerini giriniz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // İşlemi durdur
+            }
 
-            boy = Convert.ToDouble(textBox2.Text);
-            kilo = Convert.ToDouble(textBox3.Text);
+            try
+            {
+                double vki;
+                double boy = Convert.ToDouble(textBox2.Text);
+                double kilo = Convert.ToDouble(textBox3.Text);
 
-            vki = kilo / (boy/100 * boy/100);
+                // Boyun sıfır olup olmadığı kontrol ediliyor (Sıfıra bölme hatasını engellemek için)
+                if (boy <= 0)
+                {
+                    MessageBox.Show("Boy bilgisi 0 veya negatif olamaz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-            label4.Text = vki.ToString("0.000");
+                vki = kilo / ((boy / 100) * (boy / 100)); // VKI hesaplaması
+                label4.Text = vki.ToString("0.000");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -174,40 +209,44 @@ namespace WindowsFormsApp4
 
         private void button5_Click(object sender, EventArgs e)
         {
-            double belcevresi, yagorani, kilo, boyuncevresi, boy, kalca;
-            kilo = Convert.ToDouble(textBox3.Text);
-            belcevresi = Convert.ToDouble(textBox5.Text);
-            boyuncevresi = Convert.ToDouble(textBox6.Text);
-            boy = Convert.ToDouble(textBox2.Text);
-
-            kalca = Convert.ToDouble(textBox7.Text);
-           
-            if (label6.Text == "Erkek")
+            // Boş alan kontrolü
+            if (string.IsNullOrWhiteSpace(textBox2.Text) ||
+                string.IsNullOrWhiteSpace(textBox3.Text) ||
+                string.IsNullOrWhiteSpace(textBox5.Text) ||
+                string.IsNullOrWhiteSpace(textBox6.Text) ||
+                string.IsNullOrWhiteSpace(textBox7.Text) ||
+                string.IsNullOrWhiteSpace(label6.Text))
             {
-
-                yagorani = 495 / (1.0324 - 0.19077 * Math.Log10(belcevresi - boyuncevresi) + 0.15456 * Math.Log10(boy)) - 450;
+                MessageBox.Show("Lütfen tüm alanları doldurunuz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // İşlemi durdur
             }
 
-            else
+            try
             {
+                double belcevresi, yagorani, kilo, boyuncevresi, boy, kalca;
+                kilo = Convert.ToDouble(textBox3.Text);
+                belcevresi = Convert.ToDouble(textBox5.Text);
+                boyuncevresi = Convert.ToDouble(textBox6.Text);
+                boy = Convert.ToDouble(textBox2.Text);
+                kalca = Convert.ToDouble(textBox7.Text);
 
+                if (label6.Text == "Erkek")
+                {
+                    yagorani = 495 / (1.0324 - 0.19077 * Math.Log10(belcevresi - boyuncevresi) + 0.15456 * Math.Log10(boy)) - 450;
+                }
+                else
+                {
+                    yagorani = 495 / (1.29579 - 0.35004 * Math.Log10(belcevresi + kalca - boyuncevresi) + 0.22100 * Math.Log10(boy)) - 450;
+                }
 
-                yagorani = 495 / (1.29579 - 0.35004 * Math.Log10(belcevresi + kalca - boyuncevresi) + 0.22100 * Math.Log10(boy)) - 450;
+                label9.Text = yagorani.ToString("0.000");
             }
-            
-            label9.Text = label9.Text.Replace(",", ".");
-
-            label9.Text = yagorani.ToString("0.000");
-
-            
-
-
-
-
-
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
