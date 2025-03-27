@@ -138,10 +138,10 @@ namespace WindowsFormsApp4
             SqlCommand komutsil = new SqlCommand("Delete From Table_5 Where Ad_Soyad=@k1", baglanti);
 
             komutsil.Parameters.AddWithValue("@k1", textBox1.Text);
-            
+            acilis();
 
             komutsil.ExecuteNonQuery();
-            acilis();
+            
             MessageBox.Show("Kayıt Silindi!");
 
 
@@ -168,8 +168,8 @@ namespace WindowsFormsApp4
             textBox1.Text = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
             textBox2.Text = dataGridView1.Rows[secilen].Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
-            label6.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
-            label9.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
+            label6.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
+            label9.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
