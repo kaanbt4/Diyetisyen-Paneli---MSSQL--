@@ -77,6 +77,12 @@ namespace WindowsFormsApp4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rumeysaOzenDataSet9.Table_6' table. You can move, or remove it, as needed.
+            this.table_6TableAdapter2.Fill(this.rumeysaOzenDataSet9.Table_6);
+            // TODO: This line of code loads data into the 'rumeysaOzenDataSet8.Table_6' table. You can move, or remove it, as needed.
+            this.table_6TableAdapter1.Fill(this.rumeysaOzenDataSet8.Table_6);
+            // TODO: This line of code loads data into the 'rumeysaOzenDataSet7.Table_6' table. You can move, or remove it, as needed.
+            this.table_6TableAdapter.Fill(this.rumeysaOzenDataSet7.Table_6);
             // TODO: This line of code loads data into the 'rumeysaOzenDataSet6.Table_5' table. You can move, or remove it, as needed.
             this.table_5TableAdapter6.Fill(this.rumeysaOzenDataSet6.Table_5);
             // TODO: This line of code loads data into the 'rumeysaOzenDataSet5.Table_5' table. You can move, or remove it, as needed.
@@ -111,6 +117,31 @@ namespace WindowsFormsApp4
             // Otomatik Sütun Genişliği
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
+            // DataGridView Başlık Stili
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkBlue;
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+
+            // Alternatif Satır Renkleri
+            dataGridView2.RowsDefaultCellStyle.BackColor = Color.White;
+            dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
+
+            // Kenarlıklar
+            dataGridView2.CellBorderStyle = DataGridViewCellBorderStyle.Single;
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.DarkCyan;
+            dataGridView2.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Hücre Metni Ortalamak
+            dataGridView2.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+            // Satır Yüksekliği Ayarlama
+            dataGridView2.RowTemplate.Height = 30;
+
+            // Otomatik Sütun Genişliği
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
         public void acilis()
         {
@@ -123,14 +154,19 @@ namespace WindowsFormsApp4
             
             
         }
+
+        public void acilis2()
+        {
+
+            SqlDataAdapter df = new SqlDataAdapter("SELECT * FROM Table_6 ORDER BY AdSoyad ASC", baglanti);
+            DataTable dc = new DataTable();
+            df.Fill(dc);
+            dataGridView2.DataSource = dc;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             baglanti.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_5 ORDER BY Eklenme_Tarihi ASC", baglanti);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-
+            acilis();
             baglanti.Close();
         }
 
@@ -206,6 +242,7 @@ namespace WindowsFormsApp4
             label6.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
             label9.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
         }
+        
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -251,6 +288,112 @@ namespace WindowsFormsApp4
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            int sabah, ogle, aksam, alternatif, hedefkalori;
+            int toplam;
+            string adsoyad, durum;
+            DateTime tarih;
+
+            sabah = Convert.ToInt16(TxtSabah.Text);
+            ogle = Convert.ToInt16(TxtOgle.Text);
+            aksam = Convert.ToInt16(TxtAksam.Text);
+            alternatif = Convert.ToInt16(TxtAlternatif.Text);
+            adsoyad = textBox8.Text;
+            tarih = dateTimePicker1.Value;
+            hedefkalori = Convert.ToInt16(textBox9.Text);
+
+           
+
+            
+
+            
+
+
+            toplam = sabah + ogle + aksam + alternatif;
+
+            if (hedefkalori < toplam)
+            {
+                durum = "Hedef Kalorinin Altında";
+            }
+            else if (hedefkalori > toplam)
+            {
+                durum = "Hedef Kalori Geçildi";
+            }
+            else
+            {
+                durum = "Hedef Kalori Tamamlandı";
+            }
+
+            label22.Text = toplam.ToString();
+
+
+
+
+            label18.Text = toplam.ToString();
+            durum = label23.Text;
+            
+
+            SqlCommand komut2 = new SqlCommand("INSERT INTO Table_6 (AdSoyad, Tarih, Sabah, Ogle, Aksam, Alternatif, HedefKalori, GunlukKaloriToplam, Durum ) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)", baglanti);
+
+            komut2.Parameters.AddWithValue("@p1", adsoyad);
+            komut2.Parameters.AddWithValue("@p2", tarih);
+            komut2.Parameters.AddWithValue("@p3", sabah);
+            komut2.Parameters.AddWithValue("@p4", ogle);
+            komut2.Parameters.AddWithValue("@p5", aksam);
+            komut2.Parameters.AddWithValue("@p6", alternatif);
+            komut2.Parameters.AddWithValue("@p7", hedefkalori);  // yapılacak!
+            komut2.Parameters.AddWithValue("@p8", toplam);
+            komut2.Parameters.AddWithValue("@p9", durum); // YAPILACAK!
+
+           
+            
+
+            komut2.ExecuteNonQuery();
+            acilis2();
+
+            baglanti.Close();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+
+            SqlCommand komutsil = new SqlCommand("Delete From Table_6 Where AdSoyad=@k1", baglanti);
+
+            komutsil.Parameters.AddWithValue("@k1", textBox8.Text);
+            
+
+            komutsil.ExecuteNonQuery();
+            acilis2();
+
+            MessageBox.Show("Kayıt Silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+
+            baglanti.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen2 = dataGridView2.SelectedCells[0].RowIndex;
+
+            textBox8.Text = dataGridView2.Rows[secilen2].Cells[0].Value.ToString();
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView2.Rows[secilen2].Cells[1].Value);
+            TxtSabah.Text = dataGridView2.Rows[secilen2].Cells[2].Value.ToString();
+            TxtOgle.Text = dataGridView2.Rows[secilen2].Cells[3].Value.ToString();
+            TxtAksam.Text = dataGridView2.Rows[secilen2].Cells[4].Value.ToString();
+            TxtAlternatif.Text = dataGridView2.Rows[secilen2].Cells[5].Value.ToString();
         }
     }
 }

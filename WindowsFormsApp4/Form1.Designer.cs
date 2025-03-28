@@ -88,6 +88,47 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Ölçüler = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.adSoyadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarihDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sabahDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ogleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aksamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alternatifDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hedefKaloriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table6BindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.rumeysaOzenDataSet9 = new WindowsFormsApp4.RumeysaOzenDataSet9();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TxtAlternatif = new System.Windows.Forms.TextBox();
+            this.TxtAksam = new System.Windows.Forms.TextBox();
+            this.TxtOgle = new System.Windows.Forms.TextBox();
+            this.TxtSabah = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.table6BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rumeysaOzenDataSet8 = new WindowsFormsApp4.RumeysaOzenDataSet8();
+            this.rumeysaOzenDataSet7 = new WindowsFormsApp4.RumeysaOzenDataSet7();
+            this.table6BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.table_6TableAdapter = new WindowsFormsApp4.RumeysaOzenDataSet7TableAdapters.Table_6TableAdapter();
+            this.table_6TableAdapter1 = new WindowsFormsApp4.RumeysaOzenDataSet8TableAdapters.Table_6TableAdapter();
+            this.table_6TableAdapter2 = new WindowsFormsApp4.RumeysaOzenDataSet9TableAdapters.Table_6TableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table5BindingSource6)).BeginInit();
@@ -106,6 +147,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.table5BindingSource2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.Ölçüler.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -289,9 +338,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(4, 586);
+            this.button1.Location = new System.Drawing.Point(18, 584);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 54);
+            this.button1.Size = new System.Drawing.Size(261, 54);
             this.button1.TabIndex = 8;
             this.button1.Text = "Kaydet";
             this.button1.UseVisualStyleBackColor = false;
@@ -300,9 +349,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(85, 586);
+            this.button2.Location = new System.Drawing.Point(18, 646);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 54);
+            this.button2.Size = new System.Drawing.Size(261, 54);
             this.button2.TabIndex = 9;
             this.button2.Text = "Listele";
             this.button2.UseVisualStyleBackColor = false;
@@ -311,9 +360,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.Location = new System.Drawing.Point(166, 586);
+            this.button3.Location = new System.Drawing.Point(18, 708);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(82, 54);
+            this.button3.Size = new System.Drawing.Size(261, 54);
             this.button3.TabIndex = 10;
             this.button3.Text = "Temizle";
             this.button3.UseVisualStyleBackColor = false;
@@ -348,7 +397,7 @@
             this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.Location = new System.Drawing.Point(7, 207);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 47);
+            this.button4.Size = new System.Drawing.Size(230, 47);
             this.button4.TabIndex = 7;
             this.button4.Text = "VKI HESAPLA";
             this.button4.UseVisualStyleBackColor = false;
@@ -563,28 +612,380 @@
             this.Ölçüler.Controls.Add(this.label10);
             this.Ölçüler.Controls.Add(this.label11);
             this.Ölçüler.Controls.Add(this.textBox6);
-            this.Ölçüler.Location = new System.Drawing.Point(12, 321);
+            this.Ölçüler.Location = new System.Drawing.Point(4, 321);
             this.Ölçüler.Name = "Ölçüler";
-            this.Ölçüler.Size = new System.Drawing.Size(239, 135);
+            this.Ölçüler.Size = new System.Drawing.Size(375, 135);
             this.Ölçüler.TabIndex = 28;
             this.Ölçüler.TabStop = false;
             this.Ölçüler.Text = "Ölçü Değerleri";
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.button8);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.textBox9);
+            this.groupBox4.Controls.Add(this.button7);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.textBox8);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.button6);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.TxtAlternatif);
+            this.groupBox4.Controls.Add(this.TxtAksam);
+            this.groupBox4.Controls.Add(this.TxtOgle);
+            this.groupBox4.Controls.Add(this.TxtSabah);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label15);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Location = new System.Drawing.Point(385, 408);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(972, 238);
+            this.groupBox4.Size = new System.Drawing.Size(1005, 435);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kalori Takip";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(623, 266);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(51, 16);
+            this.label24.TabIndex = 24;
+            this.label24.Text = "label24";
+            this.label24.Visible = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Aqua;
+            this.button8.Location = new System.Drawing.Point(884, 325);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(82, 38);
+            this.button8.TabIndex = 23;
+            this.button8.Text = "Hesapla";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(896, 300);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 16);
+            this.label23.TabIndex = 22;
+            this.label23.Text = "label23";
+            this.label23.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(896, 257);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 16);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "label22";
+            this.label22.Visible = false;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.adSoyadDataGridViewTextBoxColumn1,
+            this.tarihDataGridViewTextBoxColumn,
+            this.sabahDataGridViewTextBoxColumn,
+            this.ogleDataGridViewTextBoxColumn,
+            this.aksamDataGridViewTextBoxColumn,
+            this.alternatifDataGridViewTextBoxColumn,
+            this.hedefKaloriDataGridViewTextBoxColumn,
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn,
+            this.durumDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.table6BindingSource2;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 21);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(993, 233);
+            this.dataGridView2.TabIndex = 20;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // adSoyadDataGridViewTextBoxColumn1
+            // 
+            this.adSoyadDataGridViewTextBoxColumn1.DataPropertyName = "AdSoyad";
+            this.adSoyadDataGridViewTextBoxColumn1.HeaderText = "AdSoyad";
+            this.adSoyadDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.adSoyadDataGridViewTextBoxColumn1.Name = "adSoyadDataGridViewTextBoxColumn1";
+            this.adSoyadDataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // tarihDataGridViewTextBoxColumn
+            // 
+            this.tarihDataGridViewTextBoxColumn.DataPropertyName = "Tarih";
+            this.tarihDataGridViewTextBoxColumn.HeaderText = "Tarih";
+            this.tarihDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tarihDataGridViewTextBoxColumn.Name = "tarihDataGridViewTextBoxColumn";
+            this.tarihDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // sabahDataGridViewTextBoxColumn
+            // 
+            this.sabahDataGridViewTextBoxColumn.DataPropertyName = "Sabah";
+            this.sabahDataGridViewTextBoxColumn.HeaderText = "Sabah";
+            this.sabahDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sabahDataGridViewTextBoxColumn.Name = "sabahDataGridViewTextBoxColumn";
+            this.sabahDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ogleDataGridViewTextBoxColumn
+            // 
+            this.ogleDataGridViewTextBoxColumn.DataPropertyName = "Ogle";
+            this.ogleDataGridViewTextBoxColumn.HeaderText = "Ogle";
+            this.ogleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ogleDataGridViewTextBoxColumn.Name = "ogleDataGridViewTextBoxColumn";
+            this.ogleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // aksamDataGridViewTextBoxColumn
+            // 
+            this.aksamDataGridViewTextBoxColumn.DataPropertyName = "Aksam";
+            this.aksamDataGridViewTextBoxColumn.HeaderText = "Aksam";
+            this.aksamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.aksamDataGridViewTextBoxColumn.Name = "aksamDataGridViewTextBoxColumn";
+            this.aksamDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // alternatifDataGridViewTextBoxColumn
+            // 
+            this.alternatifDataGridViewTextBoxColumn.DataPropertyName = "Alternatif";
+            this.alternatifDataGridViewTextBoxColumn.HeaderText = "Alternatif";
+            this.alternatifDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.alternatifDataGridViewTextBoxColumn.Name = "alternatifDataGridViewTextBoxColumn";
+            this.alternatifDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // hedefKaloriDataGridViewTextBoxColumn
+            // 
+            this.hedefKaloriDataGridViewTextBoxColumn.DataPropertyName = "HedefKalori";
+            this.hedefKaloriDataGridViewTextBoxColumn.HeaderText = "HedefKalori";
+            this.hedefKaloriDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.hedefKaloriDataGridViewTextBoxColumn.Name = "hedefKaloriDataGridViewTextBoxColumn";
+            this.hedefKaloriDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gunlukKaloriToplamDataGridViewTextBoxColumn
+            // 
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn.DataPropertyName = "GunlukKaloriToplam";
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn.HeaderText = "GunlukKaloriToplam";
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn.Name = "gunlukKaloriToplamDataGridViewTextBoxColumn";
+            this.gunlukKaloriToplamDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // durumDataGridViewTextBoxColumn
+            // 
+            this.durumDataGridViewTextBoxColumn.DataPropertyName = "Durum";
+            this.durumDataGridViewTextBoxColumn.HeaderText = "Durum";
+            this.durumDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.durumDataGridViewTextBoxColumn.Name = "durumDataGridViewTextBoxColumn";
+            this.durumDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // table6BindingSource2
+            // 
+            this.table6BindingSource2.DataMember = "Table_6";
+            this.table6BindingSource2.DataSource = this.rumeysaOzenDataSet9;
+            // 
+            // rumeysaOzenDataSet9
+            // 
+            this.rumeysaOzenDataSet9.DataSetName = "RumeysaOzenDataSet9";
+            this.rumeysaOzenDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(378, 402);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(90, 16);
+            this.label21.TabIndex = 19;
+            this.label21.Text = "Kalori Hedefi :";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(474, 399);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 22);
+            this.textBox9.TabIndex = 18;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Crimson;
+            this.button7.Location = new System.Drawing.Point(626, 369);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(167, 60);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Sil";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(7, 405);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(44, 16);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Tarih :";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(86, 400);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(214, 22);
+            this.dateTimePicker1.TabIndex = 14;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(7, 375);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(73, 16);
+            this.label19.TabIndex = 13;
+            this.label19.Text = "Ad Soyad :";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(86, 372);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(214, 22);
+            this.textBox8.TabIndex = 12;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(398, 391);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 16);
+            this.label18.TabIndex = 11;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button6.Location = new System.Drawing.Point(799, 369);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(167, 60);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Kaydet";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 257);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(79, 16);
+            this.label17.TabIndex = 9;
+            this.label17.Text = "Kalori Takip";
+            // 
+            // TxtAlternatif
+            // 
+            this.TxtAlternatif.Location = new System.Drawing.Point(722, 305);
+            this.TxtAlternatif.Name = "TxtAlternatif";
+            this.TxtAlternatif.Size = new System.Drawing.Size(100, 22);
+            this.TxtAlternatif.TabIndex = 8;
+            // 
+            // TxtAksam
+            // 
+            this.TxtAksam.Location = new System.Drawing.Point(474, 305);
+            this.TxtAksam.Name = "TxtAksam";
+            this.TxtAksam.Size = new System.Drawing.Size(100, 22);
+            this.TxtAksam.TabIndex = 7;
+            // 
+            // TxtOgle
+            // 
+            this.TxtOgle.Location = new System.Drawing.Point(234, 305);
+            this.TxtOgle.Name = "TxtOgle";
+            this.TxtOgle.Size = new System.Drawing.Size(100, 22);
+            this.TxtOgle.TabIndex = 6;
+            // 
+            // TxtSabah
+            // 
+            this.TxtSabah.Location = new System.Drawing.Point(29, 305);
+            this.TxtSabah.Name = "TxtSabah";
+            this.TxtSabah.Size = new System.Drawing.Size(100, 22);
+            this.TxtSabah.TabIndex = 5;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(742, 286);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 16);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Alternatif";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(497, 286);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(49, 16);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Akşam";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(264, 286);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(36, 16);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Öğle";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(52, 286);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(47, 16);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Sabah";
+            // 
+            // table6BindingSource1
+            // 
+            this.table6BindingSource1.DataMember = "Table_6";
+            this.table6BindingSource1.DataSource = this.rumeysaOzenDataSet8;
+            // 
+            // rumeysaOzenDataSet8
+            // 
+            this.rumeysaOzenDataSet8.DataSetName = "RumeysaOzenDataSet8";
+            this.rumeysaOzenDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rumeysaOzenDataSet7
+            // 
+            this.rumeysaOzenDataSet7.DataSetName = "RumeysaOzenDataSet7";
+            this.rumeysaOzenDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // table6BindingSource
+            // 
+            this.table6BindingSource.DataMember = "Table_6";
+            this.table6BindingSource.DataSource = this.rumeysaOzenDataSet7;
+            // 
+            // table_6TableAdapter
+            // 
+            this.table_6TableAdapter.ClearBeforeFill = true;
+            // 
+            // table_6TableAdapter1
+            // 
+            this.table_6TableAdapter1.ClearBeforeFill = true;
+            // 
+            // table_6TableAdapter2
+            // 
+            this.table_6TableAdapter2.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SandyBrown;
-            this.ClientSize = new System.Drawing.Size(1390, 652);
+            this.BackColor = System.Drawing.Color.Tan;
+            this.ClientSize = new System.Drawing.Size(1390, 855);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Ölçüler);
             this.Controls.Add(this.groupBox2);
@@ -622,6 +1023,15 @@
             this.groupBox2.PerformLayout();
             this.Ölçüler.ResumeLayout(false);
             this.Ölçüler.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -688,6 +1098,47 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox Ölçüler;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox TxtAlternatif;
+        private System.Windows.Forms.TextBox TxtAksam;
+        private System.Windows.Forms.TextBox TxtOgle;
+        private System.Windows.Forms.TextBox TxtSabah;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private RumeysaOzenDataSet7 rumeysaOzenDataSet7;
+        private System.Windows.Forms.BindingSource table6BindingSource;
+        private RumeysaOzenDataSet7TableAdapters.Table_6TableAdapter table_6TableAdapter;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox8;
+        private RumeysaOzenDataSet8 rumeysaOzenDataSet8;
+        private System.Windows.Forms.BindingSource table6BindingSource1;
+        private RumeysaOzenDataSet8TableAdapters.Table_6TableAdapter table_6TableAdapter1;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private RumeysaOzenDataSet9 rumeysaOzenDataSet9;
+        private System.Windows.Forms.BindingSource table6BindingSource2;
+        private RumeysaOzenDataSet9TableAdapters.Table_6TableAdapter table_6TableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adSoyadDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tarihDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sabahDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ogleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aksamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alternatifDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hedefKaloriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gunlukKaloriToplamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label24;
     }
 }
 

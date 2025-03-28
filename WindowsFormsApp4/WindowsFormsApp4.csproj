@@ -95,6 +95,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RumeysaOzenDataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RumeysaOzenDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RumeysaOzenDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RumeysaOzenDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RumeysaOzenDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RumeysaOzenDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RumeysaOzenDataSet9.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +210,39 @@
     </None>
     <None Include="RumeysaOzenDataSet6.xss">
       <DependentUpon>RumeysaOzenDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet7.xsc">
+      <DependentUpon>RumeysaOzenDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RumeysaOzenDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RumeysaOzenDataSet7.xss">
+      <DependentUpon>RumeysaOzenDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet8.xsc">
+      <DependentUpon>RumeysaOzenDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RumeysaOzenDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RumeysaOzenDataSet8.xss">
+      <DependentUpon>RumeysaOzenDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet9.xsc">
+      <DependentUpon>RumeysaOzenDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RumeysaOzenDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RumeysaOzenDataSet9.xss">
+      <DependentUpon>RumeysaOzenDataSet9.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
