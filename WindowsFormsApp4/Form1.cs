@@ -141,6 +141,11 @@ namespace WindowsFormsApp4
 
             // Otomatik Sütun Genişliği
             dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            
+        
+            
+        
+
 
         }
         public void acilis()
@@ -209,10 +214,11 @@ namespace WindowsFormsApp4
             SqlCommand komutsil = new SqlCommand("Delete From Table_5 Where Ad_Soyad=@k1", baglanti);
 
             komutsil.Parameters.AddWithValue("@k1", textBox1.Text);
-            acilis();
+            
 
             komutsil.ExecuteNonQuery();
-            
+            acilis();
+
             MessageBox.Show("Kayıt Silindi!");
 
 
@@ -315,11 +321,11 @@ namespace WindowsFormsApp4
 
             toplam = sabah + ogle + aksam + alternatif;
 
-            if (hedefkalori < toplam)
+            if (hedefkalori > toplam)
             {
                 durum = "Hedef Kalorinin Altında";
             }
-            else if (hedefkalori > toplam)
+            else if (hedefkalori < toplam)
             {
                 durum = "Hedef Kalori Geçildi";
             }
@@ -328,13 +334,7 @@ namespace WindowsFormsApp4
                 durum = "Hedef Kalori Tamamlandı";
             }
 
-            label22.Text = toplam.ToString();
-
-
-
-
-            label18.Text = toplam.ToString();
-            durum = label23.Text;
+            
             
 
             SqlCommand komut2 = new SqlCommand("INSERT INTO Table_6 (AdSoyad, Tarih, Sabah, Ogle, Aksam, Alternatif, HedefKalori, GunlukKaloriToplam, Durum ) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)", baglanti);
@@ -395,5 +395,7 @@ namespace WindowsFormsApp4
             TxtAksam.Text = dataGridView2.Rows[secilen2].Cells[4].Value.ToString();
             TxtAlternatif.Text = dataGridView2.Rows[secilen2].Cells[5].Value.ToString();
         }
+
+        
     }
 }

@@ -714,6 +714,7 @@
             this.dataGridView2.Size = new System.Drawing.Size(993, 233);
             this.dataGridView2.TabIndex = 20;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            
             // 
             // adSoyadDataGridViewTextBoxColumn1
             // 
