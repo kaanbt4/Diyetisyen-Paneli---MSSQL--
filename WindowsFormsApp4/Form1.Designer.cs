@@ -208,11 +208,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(382, -16);
+            this.groupBox1.Location = new System.Drawing.Point(385, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1011, 418);
+            this.groupBox1.Size = new System.Drawing.Size(1448, 390);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Bilgi";
             // 
             // dataGridView1
             // 
@@ -228,13 +229,12 @@
             this.yagorani,
             this.cinsiyetDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.table5BindingSource6;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 18);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1005, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(1439, 366);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -338,7 +338,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(18, 584);
+            this.button1.Location = new System.Drawing.Point(7, 477);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 54);
             this.button1.TabIndex = 8;
@@ -349,7 +349,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button2.Location = new System.Drawing.Point(18, 646);
+            this.button2.Location = new System.Drawing.Point(7, 539);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(261, 54);
             this.button2.TabIndex = 9;
@@ -360,7 +360,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.Location = new System.Drawing.Point(18, 708);
+            this.button3.Location = new System.Drawing.Point(7, 601);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(261, 54);
             this.button3.TabIndex = 10;
@@ -385,11 +385,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(125, 282);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label4.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label4.Location = new System.Drawing.Point(136, 263);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 32);
+            this.label4.Size = new System.Drawing.Size(0, 16);
             this.label4.TabIndex = 10;
             // 
             // button4
@@ -438,10 +438,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(2, 279);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(12, 257);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 25);
+            this.label5.Size = new System.Drawing.Size(89, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "VKI Değeri :";
             // 
@@ -506,9 +506,9 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.Info;
-            this.button5.Location = new System.Drawing.Point(4, 462);
+            this.button5.Location = new System.Drawing.Point(7, 426);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(233, 46);
+            this.button5.Size = new System.Drawing.Size(180, 29);
             this.button5.TabIndex = 18;
             this.button5.Text = "Yağ Oranı Hesapla";
             this.button5.UseVisualStyleBackColor = false;
@@ -534,7 +534,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(115, 524);
+            this.label9.Location = new System.Drawing.Point(304, 432);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 16);
             this.label9.TabIndex = 21;
@@ -579,7 +579,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(4, 524);
+            this.label12.Location = new System.Drawing.Point(193, 432);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(103, 16);
             this.label12.TabIndex = 26;
@@ -612,7 +612,7 @@
             this.Ölçüler.Controls.Add(this.label10);
             this.Ölçüler.Controls.Add(this.label11);
             this.Ölçüler.Controls.Add(this.textBox6);
-            this.Ölçüler.Location = new System.Drawing.Point(4, 321);
+            this.Ölçüler.Location = new System.Drawing.Point(7, 285);
             this.Ölçüler.Name = "Ölçüler";
             this.Ölçüler.Size = new System.Drawing.Size(375, 135);
             this.Ölçüler.TabIndex = 28;
@@ -646,7 +646,7 @@
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Location = new System.Drawing.Point(385, 408);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1005, 435);
+            this.groupBox4.Size = new System.Drawing.Size(1448, 435);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Kalori Takip";
@@ -664,7 +664,7 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Aqua;
-            this.button8.Location = new System.Drawing.Point(884, 325);
+            this.button8.Location = new System.Drawing.Point(1234, 325);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(82, 38);
             this.button8.TabIndex = 23;
@@ -711,10 +711,9 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(993, 233);
+            this.dataGridView2.Size = new System.Drawing.Size(1436, 233);
             this.dataGridView2.TabIndex = 20;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            
             // 
             // adSoyadDataGridViewTextBoxColumn1
             // 
@@ -817,7 +816,7 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Crimson;
-            this.button7.Location = new System.Drawing.Point(626, 369);
+            this.button7.Location = new System.Drawing.Point(977, 369);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(167, 60);
             this.button7.TabIndex = 17;
@@ -868,7 +867,7 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button6.Location = new System.Drawing.Point(799, 369);
+            this.button6.Location = new System.Drawing.Point(1150, 369);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(167, 60);
             this.button6.TabIndex = 10;
@@ -986,7 +985,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Tan;
-            this.ClientSize = new System.Drawing.Size(1390, 855);
+            this.ClientSize = new System.Drawing.Size(1867, 855);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Ölçüler);
             this.Controls.Add(this.groupBox2);
