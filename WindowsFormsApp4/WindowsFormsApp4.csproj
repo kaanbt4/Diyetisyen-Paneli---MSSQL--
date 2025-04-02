@@ -70,6 +70,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RumeysaOzenDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RumeysaOzenDataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RumeysaOzenDataSet10.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RumeysaOzenDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -155,6 +160,17 @@
     </None>
     <None Include="RumeysaOzenDataSet1.xss">
       <DependentUpon>RumeysaOzenDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet10.xsc">
+      <DependentUpon>RumeysaOzenDataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="RumeysaOzenDataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RumeysaOzenDataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RumeysaOzenDataSet10.xss">
+      <DependentUpon>RumeysaOzenDataSet10.xsd</DependentUpon>
     </None>
     <None Include="RumeysaOzenDataSet2.xsc">
       <DependentUpon>RumeysaOzenDataSet2.xsd</DependentUpon>

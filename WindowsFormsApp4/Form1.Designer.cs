@@ -37,13 +37,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tcKimlikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kiloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vKIDegeriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yagorani = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cinsiyetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table5BindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.rumeysaOzenDataSet6 = new WindowsFormsApp4.RumeysaOzenDataSet6();
             this.table5BindingSource5 = new System.Windows.Forms.BindingSource(this.components);
@@ -86,6 +79,10 @@
             this.table_5TableAdapter6 = new WindowsFormsApp4.RumeysaOzenDataSet6TableAdapters.Table_5TableAdapter();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
             this.Ölçüler = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -128,10 +125,17 @@
             this.table_6TableAdapter = new WindowsFormsApp4.RumeysaOzenDataSet7TableAdapters.Table_6TableAdapter();
             this.table_6TableAdapter1 = new WindowsFormsApp4.RumeysaOzenDataSet8TableAdapters.Table_6TableAdapter();
             this.table_6TableAdapter2 = new WindowsFormsApp4.RumeysaOzenDataSet9TableAdapters.Table_6TableAdapter();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
+            this.rumeysaOzenDataSet10 = new WindowsFormsApp4.RumeysaOzenDataSet10();
+            this.table5BindingSource7 = new System.Windows.Forms.BindingSource(this.components);
+            this.table_5TableAdapter7 = new WindowsFormsApp4.RumeysaOzenDataSet10TableAdapters.Table_5TableAdapter();
+            this.tcKimlikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kiloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vKIDegeriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yagorani = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinsiyetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anamnez = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table5BindingSource6)).BeginInit();
@@ -158,6 +162,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table5BindingSource7)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -230,8 +236,9 @@
             this.kiloDataGridViewTextBoxColumn,
             this.vKIDegeriDataGridViewTextBoxColumn,
             this.yagorani,
-            this.cinsiyetDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.table5BindingSource6;
+            this.cinsiyetDataGridViewTextBoxColumn,
+            this.Anamnez});
+            this.dataGridView1.DataSource = this.table5BindingSource7;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView1.Location = new System.Drawing.Point(6, 18);
             this.dataGridView1.Name = "dataGridView1";
@@ -240,62 +247,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1439, 366);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // tcKimlikDataGridViewTextBoxColumn
-            // 
-            this.tcKimlikDataGridViewTextBoxColumn.DataPropertyName = "Tc_Kimlik";
-            this.tcKimlikDataGridViewTextBoxColumn.HeaderText = "Tc_Kimlik";
-            this.tcKimlikDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tcKimlikDataGridViewTextBoxColumn.Name = "tcKimlikDataGridViewTextBoxColumn";
-            this.tcKimlikDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // adSoyadDataGridViewTextBoxColumn
-            // 
-            this.adSoyadDataGridViewTextBoxColumn.DataPropertyName = "Ad_Soyad";
-            this.adSoyadDataGridViewTextBoxColumn.HeaderText = "Ad_Soyad";
-            this.adSoyadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.adSoyadDataGridViewTextBoxColumn.Name = "adSoyadDataGridViewTextBoxColumn";
-            this.adSoyadDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // boyDataGridViewTextBoxColumn
-            // 
-            this.boyDataGridViewTextBoxColumn.DataPropertyName = "Boy";
-            this.boyDataGridViewTextBoxColumn.HeaderText = "Boy";
-            this.boyDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.boyDataGridViewTextBoxColumn.Name = "boyDataGridViewTextBoxColumn";
-            this.boyDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // kiloDataGridViewTextBoxColumn
-            // 
-            this.kiloDataGridViewTextBoxColumn.DataPropertyName = "Kilo";
-            this.kiloDataGridViewTextBoxColumn.HeaderText = "Kilo";
-            this.kiloDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.kiloDataGridViewTextBoxColumn.Name = "kiloDataGridViewTextBoxColumn";
-            this.kiloDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // vKIDegeriDataGridViewTextBoxColumn
-            // 
-            this.vKIDegeriDataGridViewTextBoxColumn.DataPropertyName = "VKI_Degeri";
-            this.vKIDegeriDataGridViewTextBoxColumn.HeaderText = "VKI_Degeri";
-            this.vKIDegeriDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.vKIDegeriDataGridViewTextBoxColumn.Name = "vKIDegeriDataGridViewTextBoxColumn";
-            this.vKIDegeriDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // yagorani
-            // 
-            this.yagorani.DataPropertyName = "yagorani";
-            this.yagorani.HeaderText = "yagorani";
-            this.yagorani.MinimumWidth = 6;
-            this.yagorani.Name = "yagorani";
-            this.yagorani.Width = 125;
-            // 
-            // cinsiyetDataGridViewTextBoxColumn
-            // 
-            this.cinsiyetDataGridViewTextBoxColumn.DataPropertyName = "Cinsiyet";
-            this.cinsiyetDataGridViewTextBoxColumn.HeaderText = "Cinsiyet";
-            this.cinsiyetDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cinsiyetDataGridViewTextBoxColumn.Name = "cinsiyetDataGridViewTextBoxColumn";
-            this.cinsiyetDataGridViewTextBoxColumn.Width = 125;
             // 
             // table5BindingSource6
             // 
@@ -610,6 +561,43 @@
             this.groupBox2.TabIndex = 27;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bilgiler";
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.SystemColors.Info;
+            this.button8.Location = new System.Drawing.Point(271, 319);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(95, 32);
+            this.button8.TabIndex = 31;
+            this.button8.Text = "Kaydet";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(5, 229);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(80, 16);
+            this.label26.TabIndex = 20;
+            this.label26.Text = "/ Ek Bilgiler :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(8, 213);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(69, 16);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "Anamnez :";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(114, 201);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(252, 112);
+            this.textBox10.TabIndex = 18;
             // 
             // Ölçüler
             // 
@@ -975,48 +963,89 @@
             // 
             this.table_6TableAdapter2.ClearBeforeFill = true;
             // 
-            // textBox10
+            // rumeysaOzenDataSet10
             // 
-            this.textBox10.Location = new System.Drawing.Point(114, 201);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(252, 112);
-            this.textBox10.TabIndex = 18;
+            this.rumeysaOzenDataSet10.DataSetName = "RumeysaOzenDataSet10";
+            this.rumeysaOzenDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label25
+            // table5BindingSource7
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 213);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(69, 16);
-            this.label25.TabIndex = 19;
-            this.label25.Text = "Anamnez :";
+            this.table5BindingSource7.DataMember = "Table_5";
+            this.table5BindingSource7.DataSource = this.rumeysaOzenDataSet10;
             // 
-            // label26
+            // table_5TableAdapter7
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(5, 229);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(80, 16);
-            this.label26.TabIndex = 20;
-            this.label26.Text = "/ Ek Bilgiler :";
+            this.table_5TableAdapter7.ClearBeforeFill = true;
             // 
-            // button8
+            // tcKimlikDataGridViewTextBoxColumn
             // 
-            this.button8.BackColor = System.Drawing.SystemColors.Info;
-            this.button8.Location = new System.Drawing.Point(271, 319);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(95, 32);
-            this.button8.TabIndex = 31;
-            this.button8.Text = "Kaydet";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.tcKimlikDataGridViewTextBoxColumn.DataPropertyName = "Tc_Kimlik";
+            this.tcKimlikDataGridViewTextBoxColumn.HeaderText = "Tc_Kimlik";
+            this.tcKimlikDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tcKimlikDataGridViewTextBoxColumn.Name = "tcKimlikDataGridViewTextBoxColumn";
+            this.tcKimlikDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // adSoyadDataGridViewTextBoxColumn
+            // 
+            this.adSoyadDataGridViewTextBoxColumn.DataPropertyName = "Ad_Soyad";
+            this.adSoyadDataGridViewTextBoxColumn.HeaderText = "Ad_Soyad";
+            this.adSoyadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.adSoyadDataGridViewTextBoxColumn.Name = "adSoyadDataGridViewTextBoxColumn";
+            this.adSoyadDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // boyDataGridViewTextBoxColumn
+            // 
+            this.boyDataGridViewTextBoxColumn.DataPropertyName = "Boy";
+            this.boyDataGridViewTextBoxColumn.HeaderText = "Boy";
+            this.boyDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.boyDataGridViewTextBoxColumn.Name = "boyDataGridViewTextBoxColumn";
+            this.boyDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // kiloDataGridViewTextBoxColumn
+            // 
+            this.kiloDataGridViewTextBoxColumn.DataPropertyName = "Kilo";
+            this.kiloDataGridViewTextBoxColumn.HeaderText = "Kilo";
+            this.kiloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.kiloDataGridViewTextBoxColumn.Name = "kiloDataGridViewTextBoxColumn";
+            this.kiloDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // vKIDegeriDataGridViewTextBoxColumn
+            // 
+            this.vKIDegeriDataGridViewTextBoxColumn.DataPropertyName = "VKI_Degeri";
+            this.vKIDegeriDataGridViewTextBoxColumn.HeaderText = "VKI_Degeri";
+            this.vKIDegeriDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.vKIDegeriDataGridViewTextBoxColumn.Name = "vKIDegeriDataGridViewTextBoxColumn";
+            this.vKIDegeriDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // yagorani
+            // 
+            this.yagorani.DataPropertyName = "yagorani";
+            this.yagorani.HeaderText = "yagorani";
+            this.yagorani.MinimumWidth = 6;
+            this.yagorani.Name = "yagorani";
+            this.yagorani.Width = 125;
+            // 
+            // cinsiyetDataGridViewTextBoxColumn
+            // 
+            this.cinsiyetDataGridViewTextBoxColumn.DataPropertyName = "Cinsiyet";
+            this.cinsiyetDataGridViewTextBoxColumn.HeaderText = "Cinsiyet";
+            this.cinsiyetDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cinsiyetDataGridViewTextBoxColumn.Name = "cinsiyetDataGridViewTextBoxColumn";
+            this.cinsiyetDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Anamnez
+            // 
+            this.Anamnez.DataPropertyName = "Anamnez";
+            this.Anamnez.HeaderText = "Anamnez";
+            this.Anamnez.MinimumWidth = 6;
+            this.Anamnez.Name = "Anamnez";
+            this.Anamnez.Width = 125;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Tan;
+            this.BackColor = System.Drawing.Color.LightPink;
             this.ClientSize = new System.Drawing.Size(1867, 855);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.Ölçüler);
@@ -1064,6 +1093,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table6BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rumeysaOzenDataSet10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table5BindingSource7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1119,13 +1150,6 @@
         private RumeysaOzenDataSet6 rumeysaOzenDataSet6;
         private System.Windows.Forms.BindingSource table5BindingSource6;
         private RumeysaOzenDataSet6TableAdapters.Table_5TableAdapter table_5TableAdapter6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tcKimlikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adSoyadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kiloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vKIDegeriDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yagorani;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cinsiyetDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox Ölçüler;
@@ -1174,6 +1198,17 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button8;
+        private RumeysaOzenDataSet10 rumeysaOzenDataSet10;
+        private System.Windows.Forms.BindingSource table5BindingSource7;
+        private RumeysaOzenDataSet10TableAdapters.Table_5TableAdapter table_5TableAdapter7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tcKimlikDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adSoyadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kiloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vKIDegeriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yagorani;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cinsiyetDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Anamnez;
     }
 }
 

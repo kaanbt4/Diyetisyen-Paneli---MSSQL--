@@ -31,6 +31,7 @@ namespace WindowsFormsApp4
                 string.IsNullOrWhiteSpace(textBox2.Text) ||
                 string.IsNullOrWhiteSpace(textBox3.Text) ||
                 string.IsNullOrWhiteSpace(textBox4.Text) ||
+                string.IsNullOrWhiteSpace(textBox10.Text) ||
                 string.IsNullOrWhiteSpace(label4.Text) ||
                 string.IsNullOrWhiteSpace(label6.Text) ||
                 string.IsNullOrWhiteSpace(label9.Text))
@@ -45,8 +46,9 @@ namespace WindowsFormsApp4
 
                 double vki = Convert.ToDouble(label4.Text);
                 double yagorani = Convert.ToDouble(label9.Text);
+                string anamnez = textBox10.Text;
 
-                SqlCommand komut = new SqlCommand("INSERT INTO Table_5 (Ad_Soyad, Boy, Kilo, VKI_Degeri, Cinsiyet, Tc_Kimlik, yagorani) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)", baglanti);
+                SqlCommand komut = new SqlCommand("INSERT INTO Table_5 (Ad_Soyad, Boy, Kilo, VKI_Degeri, Cinsiyet, Tc_Kimlik, yagorani, Anamnez) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8)", baglanti);
                 komut.Parameters.AddWithValue("@p1", textBox1.Text);
                 komut.Parameters.AddWithValue("@p2", textBox2.Text);
                 komut.Parameters.AddWithValue("@p3", textBox3.Text);
@@ -54,6 +56,7 @@ namespace WindowsFormsApp4
                 komut.Parameters.AddWithValue("@p5", label6.Text);
                 komut.Parameters.AddWithValue("@p6", textBox4.Text);
                 komut.Parameters.AddWithValue("@p7", yagorani);
+                komut.Parameters.AddWithValue("@p8", anamnez);
 
                 komut.ExecuteNonQuery();
 
@@ -74,6 +77,8 @@ namespace WindowsFormsApp4
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rumeysaOzenDataSet10.Table_5' table. You can move, or remove it, as needed.
+            this.table_5TableAdapter7.Fill(this.rumeysaOzenDataSet10.Table_5);
             // TODO: This line of code loads data into the 'rumeysaOzenDataSet9.Table_6' table. You can move, or remove it, as needed.
             this.table_6TableAdapter2.Fill(this.rumeysaOzenDataSet9.Table_6);
             // TODO: This line of code loads data into the 'rumeysaOzenDataSet8.Table_6' table. You can move, or remove it, as needed.
@@ -244,6 +249,7 @@ namespace WindowsFormsApp4
             textBox3.Text = dataGridView1.Rows[secilen].Cells[3].Value.ToString();
             label6.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
             label9.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
+            textBox10.Text = dataGridView1.Rows[secilen].Cells[7].Value.ToString();
         }
         
 
