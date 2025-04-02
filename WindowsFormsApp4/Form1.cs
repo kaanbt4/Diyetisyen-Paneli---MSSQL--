@@ -57,10 +57,7 @@ namespace WindowsFormsApp4
 
                 komut.ExecuteNonQuery();
 
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_5 ORDER BY Eklenme_Tarihi ASC", baglanti);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                acilis();
 
                 MessageBox.Show("Girdiğiniz Bilgiler Başarıyla Kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -150,7 +147,7 @@ namespace WindowsFormsApp4
         }
         public void acilis()
         {
-           
+           // Eklenme Tarihine göre Tabloyu günceller.
             SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_5 ORDER BY Eklenme_Tarihi ASC", baglanti);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -298,66 +295,92 @@ namespace WindowsFormsApp4
 
         private void button6_Click(object sender, EventArgs e)
         {
-            baglanti.Open();
-            int sabah, ogle, aksam, alternatif, hedefkalori;
-            int toplam;
-            string adsoyad, durum;
-            DateTime tarih;
 
-            sabah = Convert.ToInt16(TxtSabah.Text);
-            ogle = Convert.ToInt16(TxtOgle.Text);
-            aksam = Convert.ToInt16(TxtAksam.Text);
-            alternatif = Convert.ToInt16(TxtAlternatif.Text);
-            adsoyad = textBox8.Text;
-            tarih = dateTimePicker1.Value;
-            hedefkalori = Convert.ToInt16(textBox9.Text);
-
-           
-
-            
-
-            
-
-
-            toplam = sabah + ogle + aksam + alternatif;
-
-            if (hedefkalori > toplam)
+            try
             {
-                durum = "Hedef Kalorinin Altında";
+                baglanti.Open();
+                int sabah, ogle, aksam, alternatif, hedefkalori;
+                int toplam;
+                string adsoyad, durum;
+                DateTime tarih;
+
+                sabah = Convert.ToInt16(TxtSabah.Text);
+                ogle = Convert.ToInt16(TxtOgle.Text);
+                aksam = Convert.ToInt16(TxtAksam.Text);
+                alternatif = Convert.ToInt16(TxtAlternatif.Text);
+                adsoyad = textBox8.Text;
+                tarih = dateTimePicker1.Value;
+                hedefkalori = Convert.ToInt16(textBox9.Text);
+
+
+
+
+
+
+
+
+                toplam = sabah + ogle + aksam + alternatif;
+
+                if (hedefkalori > toplam)
+                {
+                    durum = "----";
+                }
+                else if (hedefkalori < toplam)
+                {
+                    durum = "✓++";
+                }
+                else
+                {
+                    durum = "✓✓✓";
+                }
+
+
+
+
+
+
+                SqlCommand komut2 = new SqlCommand("INSERT INTO Table_6 (AdSoyad, Tarih, Sabah, Ogle, Aksam, Alternatif, HedefKalori, GunlukKaloriToplam, Durum ) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)", baglanti);
+
+                komut2.Parameters.AddWithValue("@p1", adsoyad);
+                komut2.Parameters.AddWithValue("@p2", tarih);
+                komut2.Parameters.AddWithValue("@p3", sabah);
+                komut2.Parameters.AddWithValue("@p4", ogle);
+                komut2.Parameters.AddWithValue("@p5", aksam);
+                komut2.Parameters.AddWithValue("@p6", alternatif);
+                komut2.Parameters.AddWithValue("@p7", hedefkalori);  // yapılacak!
+                komut2.Parameters.AddWithValue("@p8", toplam);
+                komut2.Parameters.AddWithValue("@p9", durum); // YAPILACAK!
+
+
+
+
+                komut2.ExecuteNonQuery();
+                acilis2();
+
+               
             }
-            else if (hedefkalori < toplam)
+
+            catch(FormatException)
             {
-                durum = "Hedef Kalori Geçildi";
+                MessageBox.Show("Lütfen Geçerli Değerleri Girin!", "Format Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
+
+            catch (SqlException ex)
             {
-                durum = "Hedef Kalori Tamamlandı";
+                MessageBox.Show("Veritabanı işlemi sırasında bir hata oluştu:\n" + ex.Message, "SQL Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bilinmeyen bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            
-            
-
-            SqlCommand komut2 = new SqlCommand("INSERT INTO Table_6 (AdSoyad, Tarih, Sabah, Ogle, Aksam, Alternatif, HedefKalori, GunlukKaloriToplam, Durum ) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9)", baglanti);
-
-            komut2.Parameters.AddWithValue("@p1", adsoyad);
-            komut2.Parameters.AddWithValue("@p2", tarih);
-            komut2.Parameters.AddWithValue("@p3", sabah);
-            komut2.Parameters.AddWithValue("@p4", ogle);
-            komut2.Parameters.AddWithValue("@p5", aksam);
-            komut2.Parameters.AddWithValue("@p6", alternatif);
-            komut2.Parameters.AddWithValue("@p7", hedefkalori);  // yapılacak!
-            komut2.Parameters.AddWithValue("@p8", toplam);
-            komut2.Parameters.AddWithValue("@p9", durum); // YAPILACAK!
-
-           
-            
-
-            komut2.ExecuteNonQuery();
-            acilis2();
-
-            baglanti.Close();
-
+            finally
+            {
+                baglanti.Close();
+            }
         }
+            
+
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -396,6 +419,46 @@ namespace WindowsFormsApp4
             TxtAlternatif.Text = dataGridView2.Rows[secilen2].Cells[5].Value.ToString();
         }
 
-        
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                baglanti.Open();
+                string anamnez, adsoyad;
+                adsoyad = textBox1.Text;
+                anamnez = textBox10.Text;
+
+                SqlCommand Anamnezgiris = new SqlCommand("INSERT INTO Table_7 (AdSoyad, Anamnez) VALUES (@p1, @p2)", baglanti);
+
+                Anamnezgiris.Parameters.AddWithValue("@p1", adsoyad);
+                Anamnezgiris.Parameters.AddWithValue("@p2", anamnez);
+
+                Anamnezgiris.ExecuteNonQuery();
+
+                MessageBox.Show("Anamnez Veritabanına Başarıyla Eklendi!", "İşlem Tamamlandı!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            catch (FormatException)
+            {
+                MessageBox.Show("Lütfen tüm alanlara geçerli sayısal değerler girin!", "Format Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Veritabanı işlemi sırasında bir hata oluştu:\n" + ex.Message, "SQL Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Bilinmeyen bir hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            finally
+            {
+                baglanti.Close();
+            }
+
+
+        }
     }
 }
+//  SqlCommand komut = new SqlCommand("INSERT INTO Table_5 (Ad_Soyad, Boy, Kilo, VKI_Degeri, Cinsiyet, Tc_Kimlik, yagorani) VALUES (@p1, @p2, @p3, @p4, @p5, @p6, @p7)", baglanti);
